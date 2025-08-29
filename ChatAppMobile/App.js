@@ -505,7 +505,7 @@ function App() {
     const lastSeen = new Date(time);
     const diffMs = now - lastSeen;
     const diffMins = Math.round(diffMs / 60000);
-    
+
     if (diffMins < 1) return 'now';
     if (diffMins < 60) return `${diffMins}m ago`;
     if (diffMins < 1440) return `${Math.round(diffMins / 60)}h ago`;
@@ -656,7 +656,7 @@ function App() {
 
     // Simulate message status update
     setTimeout(() => {
-      setMessages(prev => prev.map(msg => 
+      setMessages(prev => prev.map(msg =>
         msg.id === message.id ? { ...msg, status: 'read' } : msg
       ));
     }, 1000);
